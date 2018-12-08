@@ -16,7 +16,7 @@ def add_book(request):
         book.save()
         response['msg'] = 'success'
         response['error_num'] = 0
-    except  Exception as e:
+    except Exception as e:
         response['msg'] = str(e)
         response['error_num'] = 1
 

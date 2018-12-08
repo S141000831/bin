@@ -21,7 +21,7 @@ from django.views.generic import TemplateView
 import myapp.urls
 
 urlpatterns = [
-    url('admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
     url(r'^book/', include(myapp.urls)),
     url(r'^api/', include(myapp.urls)),
     url(r'^$', TemplateView.as_view(template_name="index.html")),

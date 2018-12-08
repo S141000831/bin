@@ -8,10 +8,9 @@ export function addBook(params) {
   })
 }
 
-
 export function getBook() {
   return request({
     url: '/book/show_books',
-    method: 'get',
+    method: 'get'
   })
 }

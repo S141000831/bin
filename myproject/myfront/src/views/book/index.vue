@@ -26,27 +26,27 @@ import { addBook, getBook } from '@/api/books'
 
 export default {
   name: 'book',
-  data () {
+  data() {
     return {
       input: '',
       bookList: []
     }
   },
   mounted: function() {
-      this.showBooks()
+    this.showBooks()
   },
   // created: function() {
   //     this.showBooks()
   // },
 
   methods: {
-    getInput(){
+    getInput() {
       // return  JSON.stringify({
       //   book_name: this.input
       // })
       return { book_name: this.input }
     },
-    addBook () {
+    addBook() {
       // this.$http.get('http://127.0.0.1:8000/book/add_book?book_name=' + this.input)
       addBook(this.getInput())
         .then((response) => {
@@ -60,7 +60,7 @@ export default {
         })
     },
 
-    showBooks () {
+    showBooks() {
       // this.$http.get('http://127.0.0.1:8000/book/show_books')
       getBook()
         .then((response) => {
@@ -72,7 +72,7 @@ export default {
             this.$message.error('查询书籍失败')
             console.log(res['msg'])
           }
-      })
+        })
     }
   }
 }
